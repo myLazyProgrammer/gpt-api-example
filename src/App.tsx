@@ -1,5 +1,5 @@
 import './App.css'
-import { Button } from '@douyinfe/semi-ui'
+import { Button, Rating, Switch } from '@douyinfe/semi-ui'
 import { useRemeshDomain, useRemeshQuery, useRemeshSend } from 'remesh-react'
 import { CountDomain } from './domain/countDown';
 
@@ -31,8 +31,8 @@ function App() {
 
   return (
     <div className='tw-h-full'>
-      <h1>
-        {count}
+      <h1 className='tw-text-h1'>
+        {count}<Rating/> <Switch/>
       </h1>
      <div className="tw-flex">
         <Button onClick={handleStartIncrement}>
