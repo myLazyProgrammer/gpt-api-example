@@ -7,6 +7,7 @@ specifiers:
   '@types/js-cookie': ^3.0.3
   '@types/react': ^18.0.37
   '@types/react-dom': ^18.0.11
+  '@types/uuid': ^9.0.1
   '@typescript-eslint/eslint-plugin': ^5.50.0
   '@typescript-eslint/parser': ^5.59.0
   '@vitejs/plugin-react': ^4.0.0
@@ -36,6 +37,7 @@ specifiers:
   sass: ^1.62.1
   tailwindcss: ^3.3.2
   typescript: '*'
+  uuid: ^9.0.0
   vite: ^4.3.9
   vite-plugin-semi-theme: ^0.5.0
 
@@ -49,12 +51,14 @@ dependencies:
   react-dom: 18.2.0_react@18.2.0
   recoil: 0.7.7_biqbaboplfbrettd7655fr4n2y
   rxjs: 7.8.1
+  uuid: 9.0.0
 
 devDependencies:
   '@types/event-source-polyfill': 1.0.1
   '@types/js-cookie': 3.0.3
   '@types/react': 18.2.8
   '@types/react-dom': 18.2.4
+  '@types/uuid': 9.0.1
   '@typescript-eslint/eslint-plugin': 5.59.8_54dzngpokg2nc3pytyodfzhcz4
   '@typescript-eslint/parser': 5.59.8_tizxnkcvjrb4cldxgwq5h3lj5u
   '@vitejs/plugin-react': 4.0.0_vite@4.3.9
@@ -773,6 +777,10 @@ packages:
 
   /@types/semver/7.5.0:
     resolution: {integrity: sha512-G8hZ6XJiHnuhQKR7ZmysCeJWE08o8T0AXtk5darsCaTVsYZhhgUrq53jizaR2FvsoeCwJhlmwTjkXBY5Pn/ZHw==}
+    dev: true
+
+  /@types/uuid/9.0.1:
+    resolution: {integrity: sha512-rFT3ak0/2trgvp4yYZo5iKFEPsET7vKydKF+VRCxlQ9bpheehyAJH89dAkaLEq/j/RZXJIqcgsmPJKUP1Z28HA==}
     dev: true
 
   /@typescript-eslint/eslint-plugin/5.59.8_54dzngpokg2nc3pytyodfzhcz4:
@@ -3366,6 +3374,11 @@ packages:
   /utility-types/3.10.0:
     resolution: {integrity: sha512-O11mqxmi7wMKCo6HKFt5AhO4BwY3VV68YU07tgxfz8zJTIxr4BpsezN49Ffwy9j3ZpwwJp4fkRwjRzq3uWE6Rg==}
     engines: {node: '>= 4'}
+    dev: false
+
+  /uuid/9.0.0:
+    resolution: {integrity: sha512-MXcSTerfPa4uqyzStbRoTgt5XIe3x5+42+q1sDuy3R5MDk66URdLMOZe5aPX/SQd+kuYAh0FdP/pO28IkQyTeg==}
+    hasBin: true
     dev: false
 
   /vite-plugin-semi-theme/0.5.0:

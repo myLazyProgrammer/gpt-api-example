@@ -1,17 +1,26 @@
 import { useRecoilState } from 'recoil'
-import { chatTextState } from './chatState'
-import { Observable, Subject, buffer, concatMap, filter, from, map, of, scan } from 'rxjs'
+import { chatListState } from './chatState'
+import { fromEventPattern, concatMap, filter, from, map, scan, takeWhile } from 'rxjs'
 import { getGptSK } from '@/utils/cookie'
-import axios from 'axios'
+import { fetchStream } from '@/utils/fetch'
+import { v4 as uuid } from 'uuid';
 
 export const useChatListState = () => {
 
-  const [chatText, setChatText] = useRecoilState(chatTextState);
+  const [chatList, setChatList] = useRecoilState(chatListState);
+
+  const mapChatItem = (val: string, id: string) => {
+    const data = JSON.parse(val);
+        return {
+          content: data.choices[0].delta?.content,
+          id
+        }
+  }
 
   const startChating = async () => {
-    const subject$ = new Subject<string>();
+    const id = uuid();
 
-    const response = await fetch('https://api.openai.com/v1/chat/completions', {
+    const { setEventHandle } = await fetchStream('https://api.openai.com/v1/chat/completions', {
       method: 'POST',
       headers: {
         'Authorization': getGptSK() || '',
@@ -24,42 +33,34 @@ export const useChatListState = () => {
       })
     })
 
+    const text$ = fromEventPattern<string>(setEventHandle)
+      .pipe(
+        map(i => i.split('\n')),
+        concatMap(val => from([...val])),
+        filter(Boolean),
+        map(i => i.replace('data: ', '')),
+      )
 
-    const reader = (response.body as ReadableStream<Uint8Array>).pipeThrough(new TextDecoderStream()).getReader();
-
-    const pipeStream = async () => {
-      const {done, value} = await reader.read();
-      if (value) {
-        subject$.next(value)
-      }
-      if (!done) {
-        requestAnimationFrame(pipeStream);
-      } else {
-        subject$.complete();
-      }
-    }
-    pipeStream();
-
-    subject$.pipe(
-      map(i => i.split('\n')),
-      concatMap(val => from([...val])),
-      filter(Boolean),
-      map(i => i.replace('data: ', '')),
-      filter(i => !i.includes('[DONE]')),
-      map(i => JSON.parse(i).choices[0].delta?.content),
-      filter(Boolean),
-      scan((prev, curr) => `${prev}${curr}`)
-    ).subscribe(
-      setChatText
+    text$.pipe(
+      takeWhile(i => i !== '[DONE]'),
+      map(i => mapChatItem(i, id)),
+      filter(i => Boolean(i.content)),
+      scan((prev, curr) => ({
+        content: `${prev.content}${curr.content}`,
+        id: curr.id
+      }))
+    ).subscribe(value => setChatList(curr => {
+        if (!curr.find(i => i.id === value.id)) {
+          return [...curr, {...value, role: 'sss'} ]
+        } else {
+          return curr.map(i => i.id === value.id ? ({...i, content: value.content}) : i)
+        }
+      })
     )
-
   }
 
-  
-
-
   return {
-    chatText,
+    chatList,
     startChating
   } 
 }

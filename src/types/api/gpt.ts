@@ -16,6 +16,7 @@ export interface GetChatModelsResponse {
 export interface ChatMessage {
   content: string;
   role: string;
+  id: string;
 }
 
 export interface StartChatRequest {

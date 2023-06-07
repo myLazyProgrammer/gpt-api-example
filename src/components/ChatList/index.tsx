@@ -1,13 +1,19 @@
 import {  useChatListState } from '@/domain/chat'
-import { Button } from '@douyinfe/semi-ui/'
+import { Button, List } from '@douyinfe/semi-ui/'
 
 export default () => {
 
-  const {chatText, startChating} = useChatListState()
+  const {chatList, startChating} = useChatListState()
 
   return <div>
     <div>
-    {chatText}
+      <List
+          header={<div>Header</div>}
+          footer={<div>Footer</div>}
+          bordered
+          dataSource={chatList}
+          renderItem={item => <List.Item>{item.content}</List.Item>}
+      />
     </div>
     <Button onClick={startChating}>
       测试
