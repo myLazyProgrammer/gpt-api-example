@@ -12,13 +12,17 @@
   "dependencies": {
     "@douyinfe/semi-ui": "^2.36.0",
     "@semi-bot/semi-theme-universedesign": "^1.0.12",
+    "axios": "^1.4.0",
+    "event-source-polyfill": "^1.0.31",
+    "js-cookie": "^3.0.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "remesh": "^4.1.0",
-    "remesh-react": "^4.0.1",
+    "recoil": "^0.7.7",
     "rxjs": "^7.8.1"
   },
   "devDependencies": {
+    "@types/event-source-polyfill": "^1.0.1",
+    "@types/js-cookie": "^3.0.3",
     "@types/react": "^18.0.37",
     "@types/react-dom": "^18.0.11",
     "@typescript-eslint/eslint-plugin": "^5.50.0",
