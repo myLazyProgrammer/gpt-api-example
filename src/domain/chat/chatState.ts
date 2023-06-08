@@ -1,5 +1,5 @@
 import { ChatMessage } from '@/types/api/gpt';
-import { atom, selector } from 'recoil'
+import { atom } from 'recoil';
 
 export const chatListState = atom<ChatMessage[]>({
   key: 'chatList',

@@ -1,22 +1,29 @@
 import { defineConfig } from 'vite';
-import { resolve } from 'path';
 import react from '@vitejs/plugin-react';
+import eslintPlugin from 'vite-plugin-eslint';
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
-    react(),  
+    react(),
+    eslintPlugin({
+      cache: false,
+      include: /\.(jsx?|tsx?|vue|svelte)$/,
+    }),
   ],
   resolve: {
     alias: [
       {
         find: '@',
-        replacement: resolve('/src'),
+        replacement: '/src',
       },
     ],
     extensions: ['.ts', '.js', '.tsx', '.jsx'],
   },
   server: {
-    port: 9527
-  }
-})
+    port: 9527,
+  },
+  build: {
+    rollupOptions: {},
+  },
+});

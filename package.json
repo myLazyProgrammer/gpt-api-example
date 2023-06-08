@@ -5,9 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite --config ./config/vite.config.ts",
-    "build": "tsc && vite build",
-    "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "build": "tsc && vite build --config ./config/vite.config.ts",
+    "lint": "eslint --ext '.js,.ts,.jsx,.tsx'",
+    "preview": "vite preview",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@douyinfe/semi-ui": "^2.36.0",
@@ -22,20 +23,23 @@
     "uuid": "^9.0.0"
   },
   "devDependencies": {
+    "@rollup/plugin-alias": "^5.0.0",
     "@types/event-source-polyfill": "^1.0.1",
     "@types/js-cookie": "^3.0.3",
     "@types/react": "^18.0.37",
     "@types/react-dom": "^18.0.11",
     "@types/uuid": "^9.0.1",
-    "@typescript-eslint/eslint-plugin": "^5.50.0",
-    "@typescript-eslint/parser": "^5.59.0",
+    "@typescript-eslint/eslint-plugin": "^5.59.9",
+    "@typescript-eslint/parser": "^5.59.9",
     "@vitejs/plugin-react": "^4.0.0",
     "autoprefixer": "^10.4.14",
     "eslint": "^8.0.1",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^8.8.0",
     "eslint-config-standard-with-typescript": "^35.0.0",
-    "eslint-plugin-import": "^2.25.2",
+    "eslint-import-resolver-alias": "^1.1.2",
+    "eslint-import-resolver-typescript": "^3.5.5",
+    "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-jsx-a11y": "^6.7.1",
     "eslint-plugin-n": "^15.0.0",
     "eslint-plugin-prettier": "^4.2.1",
@@ -44,12 +48,21 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.3.4",
     "fs": "0.0.1-security",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.2",
     "postcss": "^8.4.24",
     "prettier": "^2.8.8",
+    "rollup-plugin-node-resolve": "^5.2.0",
     "sass": "^1.62.1",
     "tailwindcss": "^3.3.2",
     "typescript": "*",
     "vite": "^4.3.9",
+    "vite-plugin-eslint": "^1.8.1",
     "vite-plugin-semi-theme": "^0.5.0"
+  },
+  "lint-staged": {
+    "*.{js,ts,jsx,tsx}": [
+      "eslint --fix -c .eslintrc"
+    ]
   }
 }

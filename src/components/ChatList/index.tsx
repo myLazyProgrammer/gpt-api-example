@@ -1,22 +1,23 @@
-import {  useChatListState } from '@/domain/chat'
-import { Button, List } from '@douyinfe/semi-ui/'
+import { useChatListState } from '@/domain/chat';
+import { Button, List } from '@douyinfe/semi-ui/';
 
-export default () => {
+const ChatList = () => {
+  const { chatList, startChating } = useChatListState();
 
-  const {chatList, startChating} = useChatListState()
-
-  return <div>
+  return (
     <div>
-      <List
+      <div>
+        <List
           header={<div>Header</div>}
           footer={<div>Footer</div>}
           bordered
           dataSource={chatList}
-          renderItem={item => <List.Item>{item.content}</List.Item>}
-      />
+          renderItem={(item) => <List.Item>{item.content}</List.Item>}
+        />
+      </div>
+      <Button onClick={startChating}>测试</Button>
     </div>
-    <Button onClick={startChating}>
-      测试
-    </Button>
-  </div>
-}
+  );
+};
+
+export default ChatList;
