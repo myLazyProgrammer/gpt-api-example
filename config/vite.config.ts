@@ -11,6 +11,11 @@ export default defineConfig({
       include: /\.(jsx?|tsx?|vue|svelte)$/,
     }),
   ],
+  css: {
+    modules: {
+      localsConvention: 'camelCaseOnly'
+    }
+  },
   resolve: {
     alias: [
       {
