@@ -1,4 +1,4 @@
-export const ChatItem = () => {
+const ChatItem = () => {
   return <div></div>;
 };
 
