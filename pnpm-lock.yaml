@@ -4,7 +4,6 @@ specifiers:
   '@douyinfe/semi-icons': ^2.37.0
   '@douyinfe/semi-ui': ^2.36.0
   '@rollup/plugin-alias': ^5.0.0
-  '@semi-bot/semi-theme-universedesign': ^1.0.12
   '@types/event-source-polyfill': ^1.0.1
   '@types/js-cookie': ^3.0.3
   '@types/react': ^18.0.37
@@ -32,6 +31,7 @@ specifiers:
   event-source-polyfill: ^1.0.31
   fs: 0.0.1-security
   gpt-3-encoder: ^1.1.4
+  gpt-3-encoder-browser: ^1.0.0
   husky: ^8.0.3
   js-cookie: ^3.0.5
   lint-staged: ^13.2.2
@@ -54,10 +54,10 @@ specifiers:
 dependencies:
   '@douyinfe/semi-icons': 2.37.0_react@18.2.0
   '@douyinfe/semi-ui': 2.36.0_biqbaboplfbrettd7655fr4n2y
-  '@semi-bot/semi-theme-universedesign': 1.0.12
   axios: 1.4.0
   event-source-polyfill: 1.0.31
   gpt-3-encoder: 1.1.4
+  gpt-3-encoder-browser: 1.0.0
   js-cookie: 3.0.5
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
@@ -798,10 +798,6 @@ packages:
       estree-walker: 2.0.2
       picomatch: 2.3.1
     dev: true
-
-  /@semi-bot/semi-theme-universedesign/1.0.12:
-    resolution: {integrity: sha512-EeqpOnoWPSZ22px//b3BLkA5TnALXeK81MqYRYlCgYeW/dpdDnSenGDmlxMQzLhgHOyfSZUFh5faFJp8VL5xog==}
-    dev: false
 
   /@types/eslint/8.40.0:
     resolution: {integrity: sha512-nbq2mvc/tBrK9zQQuItvjJl++GTN5j06DaPtp3hZCpngmG6Q3xoyEmd0TwZI0gAy/G1X0zhGBbr2imsGFdFV0g==}
@@ -2503,6 +2499,10 @@ packages:
     dependencies:
       get-intrinsic: 1.2.1
     dev: true
+
+  /gpt-3-encoder-browser/1.0.0:
+    resolution: {integrity: sha512-cSylNMb4yc/ogYJjbMx27MybfuvoLk3myenOqo53tFPyrjzyUWn0Jw1l2DfeFnGw+yFpimvDOjjD6RvI1Iz5lw==}
+    dev: false
 
   /gpt-3-encoder/1.1.4:
     resolution: {integrity: sha512-fSQRePV+HUAhCn7+7HL7lNIXNm6eaFWFbNLOOGtmSJ0qJycyQvj60OvRlH7mee8xAMjBDNRdMXlMwjAbMTDjkg==}
