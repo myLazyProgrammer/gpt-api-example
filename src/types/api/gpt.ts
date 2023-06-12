@@ -1,10 +1,9 @@
-
+import { ChatRole } from '@/constants/chat';
 
 export interface ChatModel {
   id: string;
   object: string;
   owner_bt: string;
-
 }
 
 export interface GetChatModelsResponse {
@@ -12,19 +11,14 @@ export interface GetChatModelsResponse {
   object: string;
 }
 
-
 export interface ChatMessage {
   content: string;
-  role: string;
+  role: ChatRole;
   id: string;
 }
 
 export interface StartChatRequest {
-  message: ChatMessage,
+  message: ChatMessage;
   model: string;
   stream: boolean;
-}
-
-export interface StartChatResponse {
-  
 }

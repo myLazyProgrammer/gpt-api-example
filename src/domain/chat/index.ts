@@ -12,6 +12,7 @@ import { v4 as uuid } from 'uuid';
 import { chatListState } from './chatState';
 import { getGptSK } from '@/utils/cookie';
 import { fetchStream } from '@/utils/fetch';
+import { ChatRole } from '@/constants/chat';
 
 export const useChatListState = () => {
   const [chatList, setChatList] = useRecoilState(chatListState);
@@ -65,7 +66,7 @@ export const useChatListState = () => {
       .subscribe((value) => {
         setChatList((curr) => {
           if (curr.find((i) => i.id === value.id) == null) {
-            return [...curr, { ...value, role: 'sss' }];
+            return [...curr, { ...value, role: ChatRole.ASSISTANT }];
           }
           return curr.map((i) =>
             i.id === value.id ? { ...i, content: value.content } : i

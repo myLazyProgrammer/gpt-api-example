@@ -1,4 +1,7 @@
 /** @type {import('tailwindcss').Config} */
+
+const spacing = new Array(200).fill(0).map((_, idx) => idx+1).reduce((prev, curr) => ({...prev, [curr]: `${curr*2}px`}), {})
+
 export default {
   prefix: 'tw-',
   content: ['./src/**/*.{html,js,tsx}'],
@@ -18,6 +21,7 @@ export default {
       regular: 400,
       bold: 600,
     },
+    spacing,
     extend: {
       colors: {
         white: ' rgba(var(--semi-white), 1);',

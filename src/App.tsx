@@ -1,14 +1,9 @@
-import ChatList from '@/components/ChatList';
 import './App.css';
-import ChatInput from './components/ChatInput';
+import router from './routes';
+import { RouterProvider } from 'react-router-dom';
 
 function App() {
-  return (
-    <div className="tw-h-full">
-      <ChatList />
-      <ChatInput />
-    </div>
-  );
+  return <RouterProvider router={router}></RouterProvider>;
 }
 
 export default App;

@@ -1,6 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@douyinfe/semi-icons': ^2.37.0
   '@douyinfe/semi-ui': ^2.36.0
   '@rollup/plugin-alias': ^5.0.0
   '@semi-bot/semi-theme-universedesign': ^1.0.12
@@ -30,6 +31,7 @@ specifiers:
   eslint-plugin-react-refresh: ^0.3.4
   event-source-polyfill: ^1.0.31
   fs: 0.0.1-security
+  gpt-3-encoder: ^1.1.4
   husky: ^8.0.3
   js-cookie: ^3.0.5
   lint-staged: ^13.2.2
@@ -37,6 +39,7 @@ specifiers:
   prettier: ^2.8.8
   react: ^18.2.0
   react-dom: ^18.2.0
+  react-router-dom: ^6.12.1
   recoil: ^0.7.7
   rollup-plugin-node-resolve: ^5.2.0
   rxjs: ^7.8.1
@@ -49,13 +52,16 @@ specifiers:
   vite-plugin-semi-theme: ^0.5.0
 
 dependencies:
+  '@douyinfe/semi-icons': 2.37.0_react@18.2.0
   '@douyinfe/semi-ui': 2.36.0_biqbaboplfbrettd7655fr4n2y
   '@semi-bot/semi-theme-universedesign': 1.0.12
   axios: 1.4.0
   event-source-polyfill: 1.0.31
+  gpt-3-encoder: 1.1.4
   js-cookie: 3.0.5
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
+  react-router-dom: 6.12.1_biqbaboplfbrettd7655fr4n2y
   recoil: 0.7.7_biqbaboplfbrettd7655fr4n2y
   rxjs: 7.8.1
   uuid: 9.0.0
@@ -387,6 +393,15 @@ packages:
 
   /@douyinfe/semi-icons/2.36.0_react@18.2.0:
     resolution: {integrity: sha512-BGnbxCdZ9uhHqvIR73lhulF0jxDEWZU45PxxHDBvaAmx2zcvfMeDcdjJWIco0Pqeo5sfCwDEOYUHIWdq/9v7cw==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+    dependencies:
+      classnames: 2.3.2
+      react: 18.2.0
+    dev: false
+
+  /@douyinfe/semi-icons/2.37.0_react@18.2.0:
+    resolution: {integrity: sha512-hfZmwE1/igvOx9rUdM8yKrF25yhap3QUC2w5ElkB3MfK6B6O64NWofTb/bezh9qFxpXbfbvzZnYE3vbMlebudQ==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
     dependencies:
@@ -758,6 +773,11 @@ packages:
       picocolors: 1.0.0
       tslib: 2.5.3
     dev: true
+
+  /@remix-run/router/1.6.3:
+    resolution: {integrity: sha512-EXJysQ7J3veRECd0kZFQwYYd5sJMcq2O/m60zu1W2l3oVQ9xtub8jTOtYRE0+M2iomyG/W3Ps7+vp2kna0C27Q==}
+    engines: {node: '>=14'}
+    dev: false
 
   /@rollup/plugin-alias/5.0.0:
     resolution: {integrity: sha512-l9hY5chSCjuFRPsnRm16twWBiSApl2uYFLsepQYwtBuAxNMQ/1dJqADld40P0Jkqm65GRTLy/AC6hnpVebtLsA==}
@@ -2484,6 +2504,10 @@ packages:
       get-intrinsic: 1.2.1
     dev: true
 
+  /gpt-3-encoder/1.1.4:
+    resolution: {integrity: sha512-fSQRePV+HUAhCn7+7HL7lNIXNm6eaFWFbNLOOGtmSJ0qJycyQvj60OvRlH7mee8xAMjBDNRdMXlMwjAbMTDjkg==}
+    dev: false
+
   /graceful-fs/4.2.11:
     resolution: {integrity: sha512-RbJ5/jmFcNNCcDV5o9eTnBLJ/HszWV0P73bc+Ff4nS/rJj+YaS6IGyiOL0VoBYX+l1Wrl3k63h/KrH+nhJ0XvQ==}
     dev: true
@@ -3437,6 +3461,29 @@ packages:
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
       react-draggable: 4.4.5_biqbaboplfbrettd7655fr4n2y
+    dev: false
+
+  /react-router-dom/6.12.1_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-POIZN9UDKWwEDga054LvYr2KnK8V+0HR4Ny4Bwv8V7/FZCPxJgsCjYxXGxqxzHs7VBxMKZfgvtKhafuJkJSPGA==}
+    engines: {node: '>=14'}
+    peerDependencies:
+      react: '>=16.8'
+      react-dom: '>=16.8'
+    dependencies:
+      '@remix-run/router': 1.6.3
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+      react-router: 6.12.1_react@18.2.0
+    dev: false
+
+  /react-router/6.12.1_react@18.2.0:
+    resolution: {integrity: sha512-evd/GrKJOeOypD0JB9e1r7pQh2gWCsTbUfq059Wm1AFT/K2MNZuDo19lFtAgIhlBrp0MmpgpqtvZC7LPAs7vSw==}
+    engines: {node: '>=14'}
+    peerDependencies:
+      react: '>=16.8'
+    dependencies:
+      '@remix-run/router': 1.6.3
+      react: 18.2.0
     dev: false
 
   /react-sortable-hoc/2.0.0_biqbaboplfbrettd7655fr4n2y:

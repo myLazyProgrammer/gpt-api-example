@@ -11,13 +11,16 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@douyinfe/semi-icons": "^2.37.0",
     "@douyinfe/semi-ui": "^2.36.0",
     "@semi-bot/semi-theme-universedesign": "^1.0.12",
     "axios": "^1.4.0",
     "event-source-polyfill": "^1.0.31",
+    "gpt-3-encoder": "^1.1.4",
     "js-cookie": "^3.0.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-router-dom": "^6.12.1",
     "recoil": "^0.7.7",
     "rxjs": "^7.8.1",
     "uuid": "^9.0.0"
