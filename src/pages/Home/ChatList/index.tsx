@@ -5,9 +5,9 @@ const ChatList = () => {
   const { chatList } = useChatListDomain();
 
   return (
-    <div>
+    <div className="tw-p-10">
       {chatList.map((i) => (
-        <ChatItem key={i.id} />
+        <ChatItem key={i.id} data={i} />
       ))}
     </div>
   );

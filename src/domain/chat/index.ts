@@ -25,23 +25,26 @@ export const useChatListDomain = () => {
     };
   };
 
-  const startChating = async () => {
+  const startChating = async (content: string) => {
     const id = uuid();
+
+    setChatList((list) => [
+      ...list,
+      { role: ChatRole.USER, content, id: uuid() },
+    ]);
 
     const { setEventHandle } = await fetchStream(
       'https://api.openai.com/v1/chat/completions',
       {
         method: 'POST',
         headers: {
-          'Authorization': getGptSK() || '',
+          'Authorization': `Bearer ${getGptSK() || ''}`,
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
           stream: true,
           model: 'gpt-3.5-turbo',
-          messages: [
-            { role: 'user', content: '写出你对react与vue的理解 至少80字' },
-          ],
+          messages: [{ role: ChatRole.USER, content }],
         }),
       }
     );
