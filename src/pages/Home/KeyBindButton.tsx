@@ -6,11 +6,21 @@ const KeyBindButton = () => {
     useSettingDomain();
 
   return secureKeyModalData.bound ? (
-    <Button type="primary" theme="solid" onClick={toggleSecureKeyModalVisible}>
+    <Button
+      type="primary"
+      theme="solid"
+      onClick={toggleSecureKeyModalVisible}
+      className="tw-w-full"
+    >
       bound success
     </Button>
   ) : (
-    <Button type="warning" theme="solid" onClick={toggleSecureKeyModalVisible}>
+    <Button
+      type="warning"
+      theme="solid"
+      onClick={toggleSecureKeyModalVisible}
+      className="tw-w-full"
+    >
       bind your api key
     </Button>
   );

@@ -14,18 +14,22 @@ export const Home = () => {
       <KeyModal />
       <Layout className="tw-h-full">
         <Layout className="tw-h-full">
-          <Sider className="tw-w-[200px] tw-h-full tw-bg-gray-200 tw-shadow-md tw-p-5 tw-flex-shrink-0">
-            <div className="tw-flex tw-flex-col tw-h-full">
-              <Button size="large" className="tw-w-full">
-                <div className="tw-flex tw-items-center">
-                  <IconCopyAdd className="tw-mr-5" />
-                  new Chat
-                </div>
-              </Button>
+          <Sider className="tw-w-[200px] tw-h-full tw-bg-gray-200 tw-shadow-md tw-py-5 tw-flex-shrink-0">
+            <div className="tw-flex tw-flex-col tw-h-full ">
+              <div className="tw-px-5 tw-pb-5">
+                <Button size="large" className="tw-w-full">
+                  <div className="tw-flex tw-items-center">
+                    <IconCopyAdd className="tw-mr-5" />
+                    new Chat
+                  </div>
+                </Button>
+              </div>
               <div className="tw-flex-1 tw-overflow-y-auto">
                 <HistoryList />
               </div>
-              <KeyBindButton />
+              <div className="tw-px-5 tw-pt-5">
+                <KeyBindButton />
+              </div>
             </div>
           </Sider>
           <Content className="tw-h-full tw-flex tw-flex-col">

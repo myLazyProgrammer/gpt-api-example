@@ -13,7 +13,9 @@
   "dependencies": {
     "@douyinfe/semi-icons": "^2.37.0",
     "@douyinfe/semi-ui": "^2.36.0",
+    "ahooks": "^3.7.7",
     "axios": "^1.4.0",
+    "dayjs": "^1.11.8",
     "event-source-polyfill": "^1.0.31",
     "gpt-3-encoder": "^1.1.4",
     "gpt-3-encoder-browser": "^1.0.0",
@@ -27,6 +29,7 @@
     "reset.css": "^2.0.2",
     "rxjs": "^7.8.1",
     "showdown": "^2.1.0",
+    "ts-indexdb": "^0.0.8",
     "uuid": "^9.0.0"
   },
   "devDependencies": {

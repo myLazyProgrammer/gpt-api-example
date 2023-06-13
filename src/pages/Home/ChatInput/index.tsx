@@ -1,19 +1,11 @@
 import { TextArea } from '@douyinfe/semi-ui';
-import { useRecoilState, useRecoilValue } from 'recoil';
-import {
-  textAreaState,
-  // associationalWordQuery,
-  tokenLenQuery,
-} from '@/domain/chat/chatState';
 import { useRef } from 'react';
 import { IconSend } from '@douyinfe/semi-icons';
-import { useChatListDomain } from '@/domain/chat';
+import { useChatInputDomain } from '@/domain/chat/chatInput';
 
 const ChatInput = () => {
-  const [text, setText] = useRecoilState(textAreaState);
-  // const associationalWord = useRecoilValue(associationalWordQuery);
-  const { startChating } = useChatListDomain();
-  const tokenLen = useRecoilValue(tokenLenQuery);
+  const { submitText, text, tokenLen, setText } = useChatInputDomain();
+
   const shiftHandle = useRef('');
   // 中文输入法标志符
   const compositionHandle = useRef(false);
@@ -43,14 +35,6 @@ const ChatInput = () => {
     if (placeholderRef.current) {
       placeholderRef.current.scrollTop = e.currentTarget.scrollTop;
     }
-  };
-
-  const submitText = () => {
-    if (!text.trim()) {
-      return;
-    }
-    startChating(text);
-    setText('');
   };
 
   const toggleCompositionHandle = () => {

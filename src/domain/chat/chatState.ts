@@ -1,6 +1,7 @@
 import { ChatMessage } from '@/types/api/gpt';
 import { atom, selector } from 'recoil';
 import { encode } from 'gpt-3-encoder-browser';
+import { Topic } from '@/types/db';
 
 export const chatListState = atom<ChatMessage[]>({
   key: 'chatList',
@@ -25,4 +26,9 @@ export const associationalWordQuery = selector<string>({
   get: () => {
     return `${Math.random().toString(32)}`;
   },
+});
+
+export const topicListState = atom<Topic[]>({
+  key: 'topicList',
+  default: [],
 });
