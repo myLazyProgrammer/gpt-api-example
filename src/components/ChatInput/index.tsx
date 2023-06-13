@@ -2,7 +2,7 @@ import { TextArea } from '@douyinfe/semi-ui';
 import { useRecoilState, useRecoilValue } from 'recoil';
 import {
   textAreaState,
-  associationalWordQuery,
+  // associationalWordQuery,
   tokenLenQuery,
 } from '@/domain/chat/chatState';
 import { useRef } from 'react';
