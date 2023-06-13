@@ -1,8 +1,8 @@
-import { useChatListState } from '@/domain/chat';
+import { useChatListDomain } from '@/domain/chat';
 import ChatItem from './ChatItem';
 
 const ChatList = () => {
-  const { chatList } = useChatListState();
+  const { chatList } = useChatListDomain();
 
   return (
     <div>

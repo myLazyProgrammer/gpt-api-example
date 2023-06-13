@@ -10,14 +10,17 @@ import { IconSend } from '@douyinfe/semi-icons';
 
 const ChatInput = () => {
   const [text, setText] = useRecoilState(textAreaState);
-  const associationalWord = useRecoilValue(associationalWordQuery);
+  // const associationalWord = useRecoilValue(associationalWordQuery);
   const tokenLen = useRecoilValue(tokenLenQuery);
 
   const placeholderRef = useRef<HTMLTextAreaElement>();
 
   const handleKeyPress = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
-    if (e.code === 'ArrowRight') {
-      setText((t) => `${t}${associationalWord}`);
+    // if (e.code === 'ArrowRight') {
+    //   setText((t) => `${t}${associationalWord}`);
+    // }
+    if (e.code === 'Enter') {
+      console.log(e.code);
     }
   };
 
@@ -37,6 +40,7 @@ const ChatInput = () => {
           onChange={setText}
           onKeyDown={handleKeyPress}
           onScroll={handleScroll}
+          placeholder="write a message"
         />
         <div className="tw-flex tw-items-center">
           <IconSend className="tw-cursor-pointer" />

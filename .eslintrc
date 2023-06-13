@@ -50,7 +50,7 @@
             }
         ],
         "quotes": [1, "single"],
-        "no-debugger": 2,
+        "no-debugger": 1,
         "no-param-reassign": 0,
         "prefer-regex-literals": 0,
         "import/no-extraneous-dependencies": 0,

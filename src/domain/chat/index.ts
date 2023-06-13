@@ -14,7 +14,7 @@ import { getGptSK } from '@/utils/cookie';
 import { fetchStream } from '@/utils/fetch';
 import { ChatRole } from '@/constants/chat';
 
-export const useChatListState = () => {
+export const useChatListDomain = () => {
   const [chatList, setChatList] = useRecoilState(chatListState);
 
   const mapChatItem = (val: string, id: string) => {

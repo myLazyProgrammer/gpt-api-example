@@ -1,30 +1,44 @@
 import ChatList from '@/components/ChatList';
 import ChatInput from '@/components/ChatInput';
-import { Layout } from '@douyinfe/semi-ui';
+import { Button, Layout } from '@douyinfe/semi-ui';
 import HistoryList from './HistoryList';
-// import { encode } from 'gpt-3-encoder';
+import { IconCopyAdd } from '@douyinfe/semi-icons';
+import KeyBindButton from './KeyBindButton';
+import KeyModal from './KeyModal';
 
 const { Sider, Content } = Layout;
 
 export const Home = () => {
-  // console.log(encode('This is an example sentence to try encoding out on!'));
-
   return (
-    <Layout className="tw-h-full">
+    <>
+      <KeyModal />
       <Layout className="tw-h-full">
-        <Sider className="tw-w-[200px] tw-h-full tw-bg-gray-200 tw-shadow-md">
-          <HistoryList />
-        </Sider>
-        <Content className="tw-h-full tw-flex tw-flex-col">
-          <div className="tw-flex-1">
-            <ChatList />
-          </div>
-          <div>
-            <ChatInput />
-          </div>
-        </Content>
+        <Layout className="tw-h-full">
+          <Sider className="tw-w-[200px] tw-h-full tw-bg-gray-200 tw-shadow-md tw-p-5">
+            <div className="tw-flex tw-flex-col tw-h-full">
+              <Button size="large" className="tw-w-full">
+                <div className="tw-flex tw-items-center">
+                  <IconCopyAdd className="tw-mr-5" />
+                  new Chat
+                </div>
+              </Button>
+              <div className="tw-flex-1 tw-overflow-y-auto">
+                <HistoryList />
+              </div>
+              <KeyBindButton />
+            </div>
+          </Sider>
+          <Content className="tw-h-full tw-flex tw-flex-col">
+            <div className="tw-flex-1">
+              <ChatList />
+            </div>
+            <div>
+              <ChatInput />
+            </div>
+          </Content>
+        </Layout>
       </Layout>
-    </Layout>
+    </>
   );
 };
 

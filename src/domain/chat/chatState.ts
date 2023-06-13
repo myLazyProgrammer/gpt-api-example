@@ -8,12 +8,12 @@ export const chatListState = atom<ChatMessage[]>({
 });
 
 export const textAreaState = atom<string>({
-  key: 'textAreaState',
+  key: 'textArea',
   default: '',
 });
 
 export const tokenLenQuery = selector<number>({
-  key: 'tokenLenState',
+  key: 'tokenLen',
   get: ({ get }) => {
     const text = get(textAreaState);
     return encode(text).length;
@@ -21,7 +21,7 @@ export const tokenLenQuery = selector<number>({
 });
 
 export const associationalWordQuery = selector<string>({
-  key: 'associationalWordQuery',
+  key: 'associationalWord',
   get: () => {
     return `${Math.random().toString(32)}`;
   },
